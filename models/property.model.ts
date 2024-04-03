@@ -64,7 +64,7 @@ const propertySchema = new Schema<IProperty>({
     },
     images: { type: [String], required: true },
     is_featured: { type: Boolean, default: false },
-    createdAt: { type: Date, default: Date.now },
-    updatedAt: { type: Date, default: Date.now }
+    // createdAt: { type: Date, default: Date.now },
+    // updatedAt: { type: Date, default: Date.now }
 });
 export default model<IProperty>("Property", propertySchema);
