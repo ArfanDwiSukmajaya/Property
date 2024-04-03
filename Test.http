@@ -1,0 +1,64 @@
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+  "email": "itudia@example.com",
+  "username": "itudia",
+  "image": "https://example.com/profile.jpg",
+  "bookmarks": []
+}
+
+###
+GET http://localhost:3000/api/users/steve@example.com
+
+###
+DELETE http://localhost:3000/api/users/steve@example.com
+
+
+
+
+###
+
+#Property
+POST http://localhost:3000/api/properties
+Content-Type: application/json
+
+{
+  "owner": "660ce11651bd8fa5e463382a",
+  "name": "Property Name",
+  "type": "Property Type",
+  "description": "Property Description",
+  "location": {
+    "street": "123 Main St",
+    "city": "City Name",
+    "state": "State Name",
+    "zipcode": "12345"
+  },
+  "beds": 3,
+  "baths": 2,
+  "square_feet": 2000,
+  "amenities": ["Swimming Pool", "Gym", "Parking"],
+  "rates": {
+    "weekly": 1000,
+    "monthly": 3000,
+    "nightly": 200
+  },
+  "seller_info": {
+    "name": "Seller Name",
+    "email": "seller@example.com",
+    "phone": "123-456-7890"
+  },
+  "images": ["image_url1", "image_url2"],
+  "is_featured": true
+}
+
+
+###
+GET http://localhost:3000/api/properties
+
+###
+GET http://localhost:3000/api/properties/660cdbf6252f41cc9abb66e7
+
+###
+DELETE http://localhost:3000/api/properties/660cdbf6252f41cc9abb66e7
+
