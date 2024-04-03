@@ -23,3 +23,4 @@ const MONGO_DB_URI = "mongodb+srv://nafra:nafra219@gigihlab.cjdbave.mongodb.net/
         console.log(error);
     }
 }))();
+//# sourceMappingURL=mongoose.js.map

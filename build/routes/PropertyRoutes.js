@@ -35,3 +35,4 @@ router.get('/:id', propertyController.getPropertyById);
 router.put('/:id', propertyController.updateProperty);
 router.delete('/:id', propertyController.deleteProperty);
 exports.default = router;
+//# sourceMappingURL=PropertyRoutes.js.map

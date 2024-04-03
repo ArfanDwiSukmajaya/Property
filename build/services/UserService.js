@@ -65,3 +65,4 @@ function deleteUserByEmail(email) {
     });
 }
 exports.deleteUserByEmail = deleteUserByEmail;
+//# sourceMappingURL=UserService.js.map

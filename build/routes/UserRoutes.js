@@ -34,3 +34,4 @@ router.get('/:email', userController.getUserByEmail);
 router.put('/:email', userController.updateUserByEmail);
 router.delete('/:email', userController.deleteUserByEmail);
 exports.default = router;
+//# sourceMappingURL=UserRoutes.js.map

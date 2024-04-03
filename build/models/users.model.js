@@ -9,3 +9,4 @@ const userSchema = new mongoose_1.Schema({
     bookmarks: { type: [{ type: mongoose_1.Schema.Types.ObjectId, ref: 'Property' }], default: [] }
 });
 exports.default = (0, mongoose_1.model)("User", userSchema);
+//# sourceMappingURL=users.model.js.map

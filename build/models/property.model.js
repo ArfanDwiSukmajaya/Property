@@ -28,7 +28,8 @@ const propertySchema = new mongoose_1.Schema({
     },
     images: { type: [String], required: true },
     is_featured: { type: Boolean, default: false },
-    createdAt: { type: Date, default: Date.now },
-    updatedAt: { type: Date, default: Date.now }
+    // createdAt: { type: Date, default: Date.now },
+    // updatedAt: { type: Date, default: Date.now }
 });
 exports.default = (0, mongoose_1.model)("Property", propertySchema);
+//# sourceMappingURL=property.model.js.map

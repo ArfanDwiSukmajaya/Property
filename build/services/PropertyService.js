@@ -113,3 +113,4 @@ function deleteProperty(propertyId) {
     });
 }
 exports.deleteProperty = deleteProperty;
+//# sourceMappingURL=PropertyService.js.map

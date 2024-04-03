@@ -136,3 +136,4 @@ function deleteProperty(req, res) {
     });
 }
 exports.deleteProperty = deleteProperty;
+//# sourceMappingURL=PropertyController.js.map

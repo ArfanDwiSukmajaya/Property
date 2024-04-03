@@ -120,3 +120,4 @@ function deleteUserByEmail(req, res) {
     });
 }
 exports.deleteUserByEmail = deleteUserByEmail;
+//# sourceMappingURL=UserController.js.map
