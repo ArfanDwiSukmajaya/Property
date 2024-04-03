@@ -9,7 +9,7 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3000/api/users/steve@example.com
+GET http://localhost:3000/api/users/itudia@example.com
 
 ###
 DELETE http://localhost:3000/api/users/steve@example.com

@@ -49,25 +49,30 @@ function getAllProperty() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const properties = yield property_model_1.default.find().sort({ createdAt: -1 });
-            const sortedProperties = properties.map(property => ({
-                _id: property._id,
-                owner: property.owner,
-                name: property.name,
-                type: property.type,
-                description: property.description,
-                location: property.location,
-                beds: property.beds,
-                baths: property.baths,
-                square_feet: property.square_feet,
-                amenities: property.amenities,
-                rates: property.rates,
-                seller_info: property.seller_info,
-                images: property.images,
-                is_featured: property.is_featured,
-                createdAt: property.createdAt,
-                updatedAt: property.updatedAt
-            }));
-            return sortedProperties;
+            const propertiesWithUsername = yield Promise.all(properties.map((property) => __awaiter(this, void 0, void 0, function* () {
+                const user = yield users_model_1.default.findById(property.owner);
+                const username = user ? user.username : 'Unknown';
+                return {
+                    _id: property._id,
+                    owner: property.owner,
+                    username: username, // Tambahkan properti username ke dalam respons
+                    name: property.name,
+                    type: property.type,
+                    description: property.description,
+                    location: property.location,
+                    beds: property.beds,
+                    baths: property.baths,
+                    square_feet: property.square_feet,
+                    amenities: property.amenities,
+                    rates: property.rates,
+                    seller_info: property.seller_info,
+                    images: property.images,
+                    is_featured: property.is_featured,
+                    createdAt: property.createdAt,
+                    updatedAt: property.updatedAt
+                };
+            })));
+            return propertiesWithUsername;
         }
         catch (error) {
             throw new Error(`Error getting all properties: ${error}`);

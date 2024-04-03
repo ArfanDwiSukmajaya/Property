@@ -31,26 +31,31 @@ export async function createProperty(propertyData: IProperty): Promise<IProperty
 export async function getAllProperty(): Promise<IProperty[]> {
     try {
         const properties = await Property.find().sort({ createdAt: -1 });
-        const sortedProperties = properties.map(property => ({
-            _id: property._id,
-            owner: property.owner,
-            name: property.name,
-            type: property.type,
-            description: property.description,
-            location: property.location,
-            beds: property.beds,
-            baths: property.baths,
-            square_feet: property.square_feet,
-            amenities: property.amenities,
-            rates: property.rates,
-            seller_info: property.seller_info,
-            images: property.images,
-            is_featured: property.is_featured,
-            createdAt: property.createdAt,
-            updatedAt: property.updatedAt
+        const propertiesWithUsername = await Promise.all(properties.map(async (property) => {
+            const user = await User.findById(property.owner);
+            const username = user ? user.username : 'Unknown';
+            return {
+                _id: property._id,
+                owner: property.owner,
+                username: username, // Tambahkan properti username ke dalam respons
+                name: property.name,
+                type: property.type,
+                description: property.description,
+                location: property.location,
+                beds: property.beds,
+                baths: property.baths,
+                square_feet: property.square_feet,
+                amenities: property.amenities,
+                rates: property.rates,
+                seller_info: property.seller_info,
+                images: property.images,
+                is_featured: property.is_featured,
+                createdAt: property.createdAt,
+                updatedAt: property.updatedAt
+            };
         }));
 
-        return sortedProperties;
+        return propertiesWithUsername;
     } catch (error) {
         throw new Error(`Error getting all properties: ${error}`);
     }
